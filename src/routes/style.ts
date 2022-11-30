@@ -1,5 +1,10 @@
 import styled from "styled-components";
+import { Link} from 'react-router-dom';
 
+export const GoBack = styled(Link)`
+    position: absolute;
+    top: 10px;
+`;
 
 export const Container = styled.div`
     padding: 0px 20px;

@@ -5,7 +5,9 @@ import { useLocation, Outlet, Link, useMatch, Routes, Route } from 'react-router
 import { useQuery } from "react-query";
 import { getCoinInfo, getCoinTickers } from "../../api/api";
 import { Helmet } from "react-helmet"
-
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { MdClose, MdPlayArrow, MdKeyboardBackspace } from "react-icons/md";
+// import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 interface ILocation {
     state: {
         name: string;
@@ -92,40 +94,19 @@ function Coin() {
     const chartMatch = useMatch("/:coinId/chart");
     // console.log(chartMatch)
     const { data: coinInfo, isLoading: coinInfoloading } = useQuery<IInfoData>(
-        ["info", coinId], // 고유한 key
-        () => getCoinInfo(String(coinId)), // fetcher 함수
+        ["info", coinId],
+        () => getCoinInfo(String(coinId)),
         {
-            refetchInterval: 5000, // 5초마다 refetch
+            refetchInterval: 5000,
         }
     );
-
     const { data: coinTickers, isLoading: coinTickersLoading, } = useQuery<IPriceData>(
         ["tickers", coinId],
         () => getCoinTickers(String(coinId))
     );
 
+    // const goBack = <FontAwesomeIcon icon={faAngleLeft} />
     const isLoading = coinInfoloading || coinTickersLoading || false;
-
-    // useEffect(() => {
-    //     (async () => {
-    //         const infoData = await (
-    //             await fetch(`https://api.coinpaprika.com/v1/coins/${coinId}`)
-    //         ).json();
-    //         // const json = await res.json();
-    //         // console.log(infoData)
-
-    //         const priceData = await (
-    //             await fetch(`https://api.coinpaprika.com/v1/tickers/${coinId}`)
-    //         ).json();
-    //         // console.log(priceData)
-
-    //         setInfo(infoData);
-    //         // console.log(infoData)
-    //         setPriceInfo(priceData);
-    //         // console.log(priceData)
-    //         setLoading(false)
-    //     })()
-    // }, [coinId])
 
     return (
         <S.Container>
@@ -143,6 +124,9 @@ function Coin() {
                 <S.Loader>Loading...</S.Loader>
             ) : (
                 <>
+                    <S.GoBack to="/">
+                        <MdKeyboardBackspace size="30px" />
+                    </S.GoBack>
                     <S.OverView>
                         <S.OverViewItems>
                             <S.OverViewItemFirst>Rank:</S.OverViewItemFirst>
