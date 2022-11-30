@@ -5,7 +5,8 @@ import { useLocation, Outlet, Link, useMatch, Routes, Route } from 'react-router
 import { useQuery } from "react-query";
 import { getCoinInfo, getCoinTickers, IGetCoinInfo, IGetCoinTickers } from "../../api/api";
 import { Helmet } from "react-helmet"
-import { MdClose, MdPlayArrow, MdKeyboardBackspace } from "react-icons/md";
+import { MdKeyboardBackspace, MdNightlightRound } from "react-icons/md";
+import ChModeBtn from "../../atom/chMode";
 interface ILocation {
     state: {
         name: string;
@@ -51,6 +52,9 @@ function Coin() {
                     <S.GoBack to="/">
                         <MdKeyboardBackspace size="30px" />
                     </S.GoBack>
+                    <S.themeBtn>
+                        <ChModeBtn />
+                    </S.themeBtn>
                     <S.OverView>
                         <S.OverViewItems>
                             <S.OverViewItemFirst>Rank:</S.OverViewItemFirst>

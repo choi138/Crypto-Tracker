@@ -24,8 +24,8 @@ export const Header = styled.header`
 export const CoinsList = styled.ul``;
 
 export const Coin = styled.li`
-    background-color: white;
-    color: ${props => props.theme.bgColor};
+    background-color: ${props => props.theme.liBgColor};
+    color: ${props => props.theme.textColor};
     margin-bottom: 10px;
     border-radius: 15px;
     a{
@@ -112,4 +112,10 @@ export const Tab = styled.span<{isActive: boolean}>`
         display: block;
         text-decoration: none;
     }
+`;
+
+export const themeBtn = styled.div` 
+    position: absolute;
+    top: 0px;
+    right: 0;
 `;

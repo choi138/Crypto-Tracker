@@ -12,6 +12,20 @@ function Chart() {
             refetchInterval: 10000,
         }
     );
+
+
+    const flatData = data?.flat() ?? [];
+    const chartData = flatData.map((price) => {
+        return {
+            x: price.time_close,
+            y: [
+                price.open,
+                price.high,
+                price.low,
+                price.close,
+            ],
+        };
+    });
     return (
         <>
             {isLoading ? (
@@ -21,15 +35,7 @@ function Chart() {
                     type="candlestick"
                     series={[
                         {
-                            data: data?.map((price: IHistoryData) => {
-                                return [
-                                    price.time_open,
-                                    price.open,
-                                    price.high,
-                                    price.low,
-                                    price.close,
-                                ];
-                            }) as any,
+                            data: chartData
                         }
                     ]}
                     options={{
@@ -37,7 +43,7 @@ function Chart() {
                             mode: "dark"
                         },
                         chart: {
-                            height: 300,
+                            height: 400,
                             width: 400,
                             toolbar: {
                                 show: false
@@ -48,17 +54,16 @@ function Chart() {
                             curve: "smooth",
                             width: 5,
                         },
-                        grid: {
-                            show: false
-                        },
                         yaxis: {
-                            tooltip: {
-                                enabled: true,
+                            labels: {
+                                formatter: (value) => '$' + value,
                             },
-
                         },
                         xaxis: {
                             type: 'datetime',
+                            tooltip: {
+                                enabled: false,
+                            },
                         },
 
                     }}
