@@ -5,7 +5,7 @@ import { MdModeNight, MdLightMode } from "react-icons/md";
 import { themeState } from '../atom';
 
 const ToggleBtnLight = styled.button<{ isActive: boolean }>`
-  background-color: ${(props) => (props.isActive ? '#fafafa' : 'transparent')};
+  background-color: ${(props) => (props.isActive ? props.theme.accentColor : 'transparent')};
   transition: 0.3s ease-in-out all;
   border: 0;
   display: flex;
@@ -40,12 +40,12 @@ function ChModeBtn() {
     }
     return (
         <Wrap>
-            <ToggleBtnLight onClick={handleTheme} isActive={isDark}>
-                <MdLightMode size="20px" />
-            </ToggleBtnLight>
             <ToggleBtnDark onClick={handleTheme} isActive={isDark}>
-                <MdModeNight size="20px" />
+                <MdLightMode size="20px" />
             </ToggleBtnDark>
+            <ToggleBtnLight onClick={handleTheme} isActive={isDark}>
+                <MdModeNight size="20px" />
+            </ToggleBtnLight>
         </Wrap>
     );
 }

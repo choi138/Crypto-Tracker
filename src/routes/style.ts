@@ -26,6 +26,7 @@ export const CoinsList = styled.ul``;
 export const Coin = styled.li`
     background-color: ${props => props.theme.liBgColor};
     color: ${props => props.theme.textColor};
+    box-shadow: 3px 2px 5px rgba(0,0,0,0.5);
     margin-bottom: 10px;
     border-radius: 15px;
     a{
@@ -60,7 +61,7 @@ export const Img = styled.img`
 export const OverView = styled.div`
     display: flex;
     justify-content: space-between;
-    background-color: ${props => props.theme.detailBgColor};
+    background-color: ${props => props.theme.liBgColor};
     padding: 10px 20px;
     border-radius: 10px;
 `;
@@ -97,7 +98,7 @@ export const Tabs = styled.div`
 `;
 
 export const Tab = styled.span<{isActive: boolean}>`
-    background-color: ${props => props.theme.detailBgColor};
+    background-color: ${props => props.theme.liBgColor};
     padding:7px 8px;
     text-align: center;
     border-radius: 10px;
@@ -116,7 +117,7 @@ export const Tab = styled.span<{isActive: boolean}>`
 
 export const TabUm = styled(Tab)`
     color: ${(props) => 
-        props.isActive?  props.theme.textColor : props.theme.accentColor
+        props.isActive?  props.theme.accentColor : props.theme.textColor
     };
 `;
 

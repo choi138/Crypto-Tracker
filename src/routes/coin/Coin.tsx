@@ -18,6 +18,7 @@ function Coin() {
     const { coinId } = useParams<{ coinId: string }>();
     const { state } = useLocation() as ILocation;
     const chartMatch = useMatch("/crypto-tracker/:coinId/chart");
+    console.log(chartMatch)
     const priceMatch = useMatch("/crypto-tracker/:coinId/price");
     const { data: coinInfo, isLoading: coinInfoloading } = useQuery<IGetCoinInfo>(
         ["info", coinId],

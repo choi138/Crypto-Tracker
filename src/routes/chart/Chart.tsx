@@ -17,26 +17,33 @@ function Chart() {
     const [isDark, setIsDark] = useRecoilState(themeState);
 
     const flatData = data?.flat() ?? [];
+    // const chartData = flatData.map((price) => {
+    //     return {
+    //         x: price.time_close,
+    //         y: [
+    //             price.open,
+    //             price.high,
+    //             price.low,
+    //             price.close,
+    //         ],
+    //     };
+    // });
     const chartData = flatData.map((price) => {
         return {
             x: price.time_close,
-            y: [
-                price.open,
-                price.high,
-                price.low,
-                price.close,
-            ],
-        };
-    });
+            y: price.close
+        }
+    })
     return (
         <>
             {isLoading ? (
                 <h2>Loading..</h2>
             ) : (
                 <ApexChart
-                    type="candlestick"
+                    type="line"
                     series={[
                         {
+                            name: "price",
                             data: chartData
                         }
                     ]}
@@ -52,9 +59,17 @@ function Chart() {
                             },
                             background: "transparent"
                         },
+                        fill: {
+                            type: "gradient",
+                            gradient: { gradientToColors: ["#0be881"], stops: [0, 100] },
+                        },
+                        colors: ["#0fbcf9"],
                         stroke: {
                             curve: "smooth",
                             width: 5,
+                        },
+                        grid: {
+                            show: false
                         },
                         yaxis: {
                             labels: {
@@ -67,7 +82,6 @@ function Chart() {
                                 enabled: false,
                             },
                         },
-
                     }}
                 />
             )}
