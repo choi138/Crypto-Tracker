@@ -1,6 +1,6 @@
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
-import { IGetCoinTickers, getCoinTickers } from "../../../api/api";
+import { IGetCoinTickers, getCoinTickers } from "../../api/api";
 import * as S from "./style"
 
 function Price() {

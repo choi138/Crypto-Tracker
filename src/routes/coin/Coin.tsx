@@ -6,7 +6,7 @@ import { useQuery } from "react-query";
 import { getCoinInfo, getCoinTickers, IGetCoinInfo, IGetCoinTickers } from "../../api/api";
 import { Helmet } from "react-helmet"
 import { MdKeyboardBackspace, MdNightlightRound } from "react-icons/md";
-import ChModeBtn from "../../theme/chMode";
+import ChModeBtn from "../../atom/chMode";
 interface ILocation {
     state: {
         name: string;

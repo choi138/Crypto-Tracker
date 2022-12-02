@@ -1,9 +1,9 @@
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
-import { getCoinHistory, IHistoryData } from "../../../api/api";
+import { getCoinHistory, IHistoryData } from "../../api/api";
 import ApexChart from "react-apexcharts";
 import { useRecoilState } from "recoil";
-import { themeState } from "../../../atom";
+import { themeState } from "../../atom";
 
 function Chart() {
     const { coinId } = useParams<{ coinId: string }>();
