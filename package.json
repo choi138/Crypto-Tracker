@@ -41,7 +41,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
   },
   "eslintConfig": {
     "extends": [
@@ -66,5 +68,5 @@
     "@types/react-slick": "^0.23.10",
     "@types/styled-components": "^5.1.26"
   },
-  "homepage": "."
+  "homepage": "https://choi138.github.io/crypto-tracker"
 }
