@@ -1,5 +1,5 @@
 ---
-name: Feature 
+name: Feature
 about: "✨ 새로 개발할 기능이 생겼나요? 작업 사항을 작성해주세요!"
 title: "[FEATURE] "
 labels: "✨ Feature"

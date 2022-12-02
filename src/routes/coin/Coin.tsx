@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import * as S from '../style'
-import { useLocation, Outlet, Link, useMatch, Routes, Route } from 'react-router-dom';
+import { useLocation, Outlet, Link, useMatch } from 'react-router-dom';
 import { useQuery } from "react-query";
 import { getCoinInfo, getCoinTickers, IGetCoinInfo, IGetCoinTickers } from "../../api/api";
 import { Helmet } from "react-helmet"
-import { MdKeyboardBackspace, MdNightlightRound } from "react-icons/md";
+import { MdKeyboardBackspace } from "react-icons/md";
 import ChModeBtn from "../../atom/chMode";
 interface ILocation {
     state: {

@@ -7,7 +7,7 @@ import App from './App';
 
 const client = new QueryClient();
 
-const root = ReactDOM.createRoot(document.getElementById('app') as HTMLElement);
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <RecoilRoot>
     <QueryClientProvider client={client}>

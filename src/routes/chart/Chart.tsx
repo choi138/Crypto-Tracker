@@ -58,7 +58,7 @@ function Chart() {
                         },
                         yaxis: {
                             labels: {
-                                formatter: (value) => '$' + value.toFixed(2),
+                                formatter: (value: number) => '$' + value.toFixed(2),
                             },
                         },
                         xaxis: {
