@@ -29,7 +29,7 @@ function Coins() {
                         {data?.slice(0, 100).map((coin) => (
                             <S.Coin key={coin.id}>
                                 <Link
-                                    to={`/${coin.id}`}
+                                    to={`/crypto-tracker/${coin.id}`}
                                     state={{ name: coin.name }}
                                 >
                                     <S.Img

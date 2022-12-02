@@ -81,10 +81,10 @@ function Coin() {
                     </S.OverView>
                     <S.Tabs>
                         <S.Tab isActive={chartMatch !== null}>
-                            <Link to={`crypto-tracker/${coinId}/chart`}> Chart </Link>
+                            <Link to={`/${coinId}/chart`}> Chart </Link>
                         </S.Tab>
                         <S.Tab isActive={priceMatch !== null}>
-                            <Link to={`crypto-tracker/${coinId}/price`}> Price</Link>
+                            <Link to={`/${coinId}/price`}> Price</Link>
                         </S.Tab>
                     </S.Tabs>
                     <Outlet />
