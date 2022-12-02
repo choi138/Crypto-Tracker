@@ -77,7 +77,7 @@ function Coin() {
                         </S.OverViewItems>
                         <S.OverViewItems>
                             <S.OverViewItemFirst>Max Supply:</S.OverViewItemFirst>
-                            <S.OverViewItemSecond>${coinTickers?.max_supply || ERROR}</S.OverViewItemSecond>
+                            <S.OverViewItemSecond>{coinTickers?.max_supply || ERROR}</S.OverViewItemSecond>
                         </S.OverViewItems>
                     </S.OverView>
                     <S.Tabs>

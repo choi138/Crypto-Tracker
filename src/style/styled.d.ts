@@ -5,6 +5,8 @@ declare module 'styled-components'{
         textColor: string,
         bgColor: string,
         accentColor: string,
-        liBgColor: string
+        liBgColor: string,
+        detailBgColor: string,
+        priceBgColor:string
     }
 }

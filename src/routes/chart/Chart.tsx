@@ -2,6 +2,8 @@ import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import { getCoinHistory, IHistoryData } from "../../api/api";
 import ApexChart from "react-apexcharts";
+import { useRecoilState } from "recoil";
+import { themeState } from "../../atom";
 
 function Chart() {
     const { coinId } = useParams<{ coinId: string }>();
@@ -12,7 +14,7 @@ function Chart() {
             refetchInterval: 10000,
         }
     );
-
+    const [isDark, setIsDark] = useRecoilState(themeState);
 
     const flatData = data?.flat() ?? [];
     const chartData = flatData.map((price) => {
@@ -40,7 +42,7 @@ function Chart() {
                     ]}
                     options={{
                         theme: {
-                            mode: "dark"
+                            mode: `${isDark ? "dark" : "light"}`
                         },
                         chart: {
                             height: 400,
@@ -56,7 +58,7 @@ function Chart() {
                         },
                         yaxis: {
                             labels: {
-                                formatter: (value) => '$' + value,
+                                formatter: (value) => '$' + value.toFixed(2),
                             },
                         },
                         xaxis: {

@@ -11,7 +11,7 @@ export const Container = styled.div`
     max-width: 480px;
     margin: 0 auto;
     position: relative;
-    bottom: -50px;
+    bottom: -30px;
 `;
 
 export const Header = styled.header`
@@ -60,7 +60,7 @@ export const Img = styled.img`
 export const OverView = styled.div`
     display: flex;
     justify-content: space-between;
-    background-color: rgba(0,0,0,0.5);
+    background-color: ${props => props.theme.detailBgColor};
     padding: 10px 20px;
     border-radius: 10px;
 `;
@@ -97,7 +97,7 @@ export const Tabs = styled.div`
 `;
 
 export const Tab = styled.span<{isActive: boolean}>`
-    background-color: rgba(0,0,0,0.5);
+    background-color: ${props => props.theme.detailBgColor};
     padding:7px 8px;
     text-align: center;
     border-radius: 10px;
