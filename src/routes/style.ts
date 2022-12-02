@@ -114,6 +114,12 @@ export const Tab = styled.span<{isActive: boolean}>`
     }
 `;
 
+export const TabUm = styled(Tab)`
+    color: ${(props) => 
+        props.isActive?  props.theme.textColor : props.theme.accentColor
+    };
+`;
+
 export const themeBtn = styled.div` 
     position: absolute;
     top: 0px;

@@ -14,6 +14,6 @@ export const LightTheme: DefaultTheme = {
     textColor: "#393E46",
     accentColor: "#9c88ff",
     liBgColor: "#EEEEEE",
-    detailBgColor: "#EDEDED",
-    priceBgColor: "#B2B2B2",
+    detailBgColor: "#FAF7F0",
+    priceBgColor: "#474E68",
 }
