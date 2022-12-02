@@ -1,11 +1,9 @@
-import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import axios from 'axios';
+import { Link } from 'react-router-dom';
 import * as S from '../style'
 import { useQuery } from 'react-query';
 import { getCoins, IGetCoinData } from '../../api/api';
 import { Helmet } from 'react-helmet';
-import ChModeBtn from '../../atom/chMode';
+import ChModeBtn from '../../theme/chMode';
 
 
 function Coins() {

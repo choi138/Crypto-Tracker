@@ -1,6 +1,4 @@
-import React from "react";
 import Router from "./Router";
-import { ReactQueryDevtools } from "react-query/devtools"
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from "./style/GlobalStyle";
 import { useRecoilValue } from "recoil";
@@ -14,7 +12,6 @@ function App() {
       <ThemeProvider theme={isDark ? DarkTheme : LightTheme}>
         <Router />
         <GlobalStyle />
-        <ReactQueryDevtools initialIsOpen={true} />
       </ThemeProvider>
     </>
   );
