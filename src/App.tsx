@@ -1,4 +1,5 @@
 import Router from "./Router";
+import { ReactQueryDevtools } from "react-query/devtools"
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from "./style/GlobalStyle";
 import { useRecoilValue } from "recoil";

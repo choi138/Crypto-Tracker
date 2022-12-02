@@ -15,7 +15,6 @@ function Coins() {
                     Coin
                 </title>
             </Helmet>
-
             <S.Header>
                 <S.Title>Coin</S.Title>
                 <ChModeBtn />

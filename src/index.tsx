@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from 'react-query'
+import { GlobalStyle } from "./style/GlobalStyle";
 import { RecoilRoot } from "recoil";
 import App from './App';
 
