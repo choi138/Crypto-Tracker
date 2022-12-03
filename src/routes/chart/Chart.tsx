@@ -16,7 +16,7 @@ function Chart() {
     );
     const [isDark, setIsDark] = useRecoilState(themeState);
 
-    const flatData = data?.flat() ?? [];
+    // const flatData = data?.flat() ?? [];
     // const chartData = flatData.map((price) => {
     //     return {
     //         x: price.time_close,
@@ -28,7 +28,7 @@ function Chart() {
     //         ],
     //     };
     // });
-    const chartData = flatData.map((price) => {
+    const chartData = data?.map((price) => {
         return {
             x: price.time_close,
             y: price.close
@@ -44,7 +44,7 @@ function Chart() {
                     series={[
                         {
                             name: "price",
-                            data: chartData
+                            data: chartData ?? []
                         }
                     ]}
                     options={{

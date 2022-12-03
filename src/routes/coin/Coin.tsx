@@ -17,9 +17,8 @@ function Coin() {
     const ERROR = "None..."
     const { coinId } = useParams<{ coinId: string }>();
     const { state } = useLocation() as ILocation;
-    const chartMatch = useMatch("/crypto-tracker/:coinId/chart");
-    console.log(chartMatch)
-    const priceMatch = useMatch("/crypto-tracker/:coinId/price");
+    const chartMatch = useMatch("/:coinId/chart");
+    const priceMatch = useMatch("/:coinId/price");
     const { data: coinInfo, isLoading: coinInfoloading } = useQuery<IGetCoinInfo>(
         ["info", coinId],
         () => getCoinInfo(String(coinId)),
@@ -49,7 +48,7 @@ function Coin() {
                 <S.Loader>Loading...</S.Loader>
             ) : (
                 <>
-                    <S.GoBack to="/crypto-tracker">
+                    <S.GoBack to="/">
                         <MdKeyboardBackspace size="30px" />
                     </S.GoBack>
                     <S.themeBtn>
@@ -83,21 +82,21 @@ function Coin() {
                     <S.Tabs>
                         {chartMatch ? (
                             <S.TabUm isActive={chartMatch !== null}>
-                                <Link to={`/crypto-tracker/${coinId}/chart`}> Chart </Link>
+                                <Link to={`/${coinId}/chart`}> Chart </Link>
                             </S.TabUm>
                         ) : (
                             <S.Tab isActive={chartMatch !== null}>
-                                <Link to={`/crypto-tracker/${coinId}/chart`}> Chart </Link>
+                                <Link to={`/${coinId}/chart`}> Chart </Link>
                             </S.Tab>
                         )}
 
                         {priceMatch ? (
                             <S.TabUm isActive={priceMatch !== null}>
-                                <Link to={`/crypto-tracker/${coinId}/price`}> Price</Link>
+                                <Link to={`/${coinId}/price`}> Price</Link>
                             </S.TabUm>
                         ) : (
                             <S.Tab isActive={priceMatch !== null}>
-                                <Link to={`/crypto-tracker/${coinId}/price`}> Price</Link>
+                                <Link to={`/${coinId}/price`}> Price</Link>
                             </S.Tab>
                         )}
                     </S.Tabs>

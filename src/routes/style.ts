@@ -15,10 +15,11 @@ export const Container = styled.div`
 `;
 
 export const Header = styled.header`
-    height: 10vh;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-self: center;
+    align-items: center;
 `;
 
 export const CoinsList = styled.ul``;

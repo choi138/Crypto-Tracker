@@ -10,7 +10,6 @@ import ChModeBtn from '../../atom/chMode';
 
 function Coins() {
     const { isLoading, data } = useQuery<IGetCoinData[]>("allCoins", getCoins)
-    console.log(data)
     return (
         <S.Container>
             <Helmet>
@@ -30,7 +29,7 @@ function Coins() {
                         {data?.slice(0, 100).map((coin) => (
                             <S.Coin key={coin.id}>
                                 <Link
-                                    to={`/crypto-tracker/${coin.id}/chart`}
+                                    to={`/${coin.id}/chart`}
                                     state={{ name: coin.name }}
                                 >
                                     <S.Img
